@@ -2,13 +2,13 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "~> 2.13"
+      version = "3.0.2"
     }
   }
 }
 
 provider "docker" {
-  host = "unix:///var/run/docker.sock"
+  host = "npipe:////./pipe/docker_engine"
 }
 
 resource "docker_image" "ubuntu" {
