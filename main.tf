@@ -18,7 +18,7 @@ resource "docker_image" "ubuntu" {
 
 resource "docker_container" "ubuntu_container" {
   name  = "ubuntu_container"
-  image = docker_image.ubuntu.latest
+  image = docker_image.ubuntu.image_id
 
   ports {
     internal = 22
